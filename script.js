@@ -47,7 +47,7 @@ function playRound(humanChoice, computerChoice) {
 
         if ((humanChoice === computerChoice)) {
                 return "It's a draw!";
-                
+
         } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
                 computerScore++;
                 return "You lose!";
@@ -72,13 +72,21 @@ function playRound(humanChoice, computerChoice) {
                 humanScore++;
                 return "You win!";
         }
-
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
 //  5 - Play 5 rounds.
+function playGame() {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+        for (let i = 0; i < 5; i++) {
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+
+                const result = playRound(humanSelection, computerSelection);
+                console.log(`Round ${i + 1}: ${result}`);
+                console.log(`Score → You: ${humanScore} | Computer: ${computerScore}`);
+        }
+}
 
