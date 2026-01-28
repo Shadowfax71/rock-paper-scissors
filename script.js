@@ -23,9 +23,9 @@ function getHumanChoice() {
                 console.log("Rock");
         } else if (userChoice === "Paper") {
                 console.log("Paper");
-        } else {
+        } else if (userChoice === "Scissors") {
                 console.log("Scissors")
-        }
+        } else return "Invalid choice"
 }
 
 
