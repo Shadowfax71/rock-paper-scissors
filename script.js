@@ -1,13 +1,13 @@
 /*  1 - Make the computer choose randomly between rock, paper or scissors.
-        - If the result is between 0 and 0.33, then it's rock.
-        - If it's between 0.33 and 0.66, then it's paper.
-        - If it's between 0.66 and 1, then it's scissors
+        - If the result is between 0 and 1, then it's rock.
+        - If it's between 1 and 2, then it's paper.
+        - If it's between 2 and 3, then it's scissors
 */
 function getComputerChoice() {
     let computerChoice = Math.random() * 3;
     if (computerChoice <= 1) {
         computerChoice = "Rock";
-    } else if (choice <= 2) {
+    } else if (computerChoice <= 2) {
         computerChoice = "Paper";
     } else {
         computerChoice = "Scissors";
@@ -42,15 +42,31 @@ let computerScore = 0;
 
 */
 function playRound(humanChoice, computerChoice) {
-        if humanChoice = "Rock" && computerChoice === "Rock" {
-                return "It's a draw!"
+        humanChoice = humanChoice.toLowerCase();
+        computerChoice = computerChoice.toLowerCase();
+
+        if ((humanChoice === computerChoice)) {
+                return "It's a draw!";
+        } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
+                return "You lose!";
+        } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
+                return "You win!";
+        } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
+                return "You win!";
+        } else if ((humanChoice === "paper") && (computerChoice ==="scissors")) {
+                return "You lose!";
+        } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
+                return "You lose!";
+        } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
+                return "You win!";
         }
+        
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//const humanSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+//playRound(humanSelection, computerSelection);
 
 //  5 - Play 5 rounds.
 
