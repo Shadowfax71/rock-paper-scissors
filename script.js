@@ -18,9 +18,15 @@ function getComputerChoice() {
 
 //  2 - Make the user choose between rock, paper or scissors.
 function getHumanChoice() {
-        prompt("Please choose between Rock, Paper or Scissors")
+        let userChoice = prompt("Please choose Rock, Paper or Scissors");
+        if (userChoice === "Rock") {
+                console.log("Rock");
+        } else if (userChoice === "Paper") {
+                console.log("Paper");
+        } else {
+                console.log("Scissors")
+        }
 }
-
 
 
 //  3 - Keep track of the player score and computer score, both starting at 0.
