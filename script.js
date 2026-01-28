@@ -47,26 +47,38 @@ function playRound(humanChoice, computerChoice) {
 
         if ((humanChoice === computerChoice)) {
                 return "It's a draw!";
+                
         } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
+                computerScore++;
                 return "You lose!";
+
         } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
+                humanScore++;
                 return "You win!";
+
         } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
+                humanScore++;
                 return "You win!";
+
         } else if ((humanChoice === "paper") && (computerChoice ==="scissors")) {
+                computerScore++;
                 return "You lose!";
+
         } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
+                computerScore++;
                 return "You lose!";
+
         } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
+                humanScore++;
                 return "You win!";
         }
-        
+
 }
 
-//const humanSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-//playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection);
 
 //  5 - Play 5 rounds.
 
