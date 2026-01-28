@@ -4,37 +4,53 @@
         - If it's between 0.66 and 1, then it's scissors
 */
 function getComputerChoice() {
-    let choice = Math.random() * 3;
-    if (choice <= 1) {
-        choice = "Rock";
+    let computerChoice = Math.random() * 3;
+    if (computerChoice <= 1) {
+        computerChoice = "Rock";
     } else if (choice <= 2) {
-        choice = "Paper";
+        computerChoice = "Paper";
     } else {
-        choice = "Scissors";
+        computerChoice = "Scissors";
     }
-    return choice;
+    return computerChoice;
 }
 
 
 //  2 - Make the user choose between rock, paper or scissors.
 function getHumanChoice() {
-        let userChoice = prompt("Please choose Rock, Paper or Scissors");
-        if (userChoice === "Rock") {
+        let humanChoice = prompt("Please choose Rock, Paper or Scissors");
+        if (humanChoice === "Rock") {
                 console.log("Rock");
-        } else if (userChoice === "Paper") {
+        } else if (humanChoice === "Paper") {
                 console.log("Paper");
-        } else if (userChoice === "Scissors") {
+        } else if (humanChoice === "Scissors") {
                 console.log("Scissors")
-        } else return "Invalid choice"
+        } else {
+                console.log("Invalid choice");
+        }
+        return humanChoice;
 }
 
 
 //  3 - Keep track of the player score and computer score, both starting at 0.
+let humanScore = 0;
+let computerScore = 0;
 /*  4 - Play a round:
         - Compare user and computer choice;
         - If there is a winner, announce the winner of the round then increment winner score by 1;
         - If there is no winner, no one gets his score incremented.
 
 */
+function playRound(humanChoice, computerChoice) {
+        if humanChoice = "Rock" && computerChoice === "Rock" {
+                return "It's a draw!"
+        }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
 //  5 - Play 5 rounds.
 
