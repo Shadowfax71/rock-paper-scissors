@@ -86,9 +86,20 @@ buttons.forEach(function(button) {
 
                const resultsDiv = document.querySelector("#results");
                resultsDiv.textContent = result + "\nScore → You: " + humanScore + " | Computer: " + computerScore;
+
+               announceWinner();
         });
 });
 
+function announceWinner() {
+        if (humanScore === 5) {
+        document.querySelector("#results").textContent += "\nYou won the game!";
+        disableButtons();
+    } else if (computerScore === 5) {
+        document.querySelector("#results").textContent += "\nYou lost the game!";
+        disableButtons();
+    }
+}
 
 
 
