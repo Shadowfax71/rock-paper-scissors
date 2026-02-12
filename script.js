@@ -73,17 +73,21 @@ function playRound(humanChoice, computerChoice) {
                 return "You win!";
         }
 }
+//UI Building
 
-//  5 - Play 5 rounds.
-function playGame() {
+const buttons = document.querySelectorAll("button");
 
-        for (let i = 0; i < 5; i++) {
-                const humanSelection = getHumanChoice();
-                const computerSelection = getComputerChoice();
+buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+               let humanChoice = button.id;
+               let computerChoice = getComputerChoice();
 
-                const result = playRound(humanSelection, computerSelection);
-                console.log(`Round ${i + 1}: ${result}`);
-                console.log(`Score → You: ${humanScore} | Computer: ${computerScore}`);
-        }
-}
+               let result = playRound(humanChoice, computerChoice);
+
+               const resultsDiv = document.querySelector("results");
+        });
+});
+
+
+
 
