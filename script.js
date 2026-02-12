@@ -101,5 +101,10 @@ function announceWinner() {
     }
 }
 
-
+function disableButtons() {
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(function(button) {
+        button.disabled = true;
+    });
+}
 
