@@ -84,7 +84,8 @@ buttons.forEach(function(button) {
 
                let result = playRound(humanChoice, computerChoice);
 
-               const resultsDiv = document.querySelector("results");
+               const resultsDiv = document.querySelector("#results");
+               resultsDiv.textContent = result + "\nScore → You: " + humanScore + " | Computer: " + computerScore;
         });
 });
 
